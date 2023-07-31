@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botôes e Cursores</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+    <div class="app">
+        <h1>Teste os botães</h1>
+        <p>Interaja com os botôes e observe a mudança de aparência e cursores</p>
+
+        <div class="buttons">
+            <button class="tertiary" disabled>
+                <i class="ph ph-circle-notch"></i>
+                Disabled
+            </button>
+
+            <button class="secondary" disabled>
+                <i class="ph ph-circle-notch"></i>
+                Disabled
+            </button>
+
+            <button class="primary loading">
+                <i class="ph ph-circle-notch"></i>
+                Loading primary
+            </button>
+
+            <button 
+                class="primary" 
+                onclick="loading(event)"
+            >
+                Loading primary
+            </button>
+
+            <button class="primary movable">
+                <i class="ph ph-list"></i>
+                Movable primary
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function loading(event) {
+            const button = event.currentTarget
+            button.classList.add('loading')
+            const text = button.textContent
+            button.innerHTML = `<i class="ph ph-circle-notch"></i> ${text}`
+        }
+    </script>
+</body>
+</html>
